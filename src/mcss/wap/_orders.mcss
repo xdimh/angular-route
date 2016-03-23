@@ -1,0 +1,83 @@
+@import "../mass/index";
+@import "_layout";
+@import "_function";
+@import "_common";
+@import "_units";
+
+.orders {
+    color: #909090;
+    font-size: 12px;
+
+    >li {
+        padding: 17px 18px 11px 18px;
+        background-color: #fff;
+    }
+    >li+li {
+        border-top: 4px solid #ebebeb;
+    }
+    .row {
+        position: relative;
+        padding: 7px 0;
+        line-height: 17px;
+    }
+    .row+.row {
+        $border1Px(top, #e5e5e5);
+    }
+    .title {
+        position: relative;
+        .u-btn {
+            position: absolute; right: 1px; bottom: 7px;
+        }
+    }
+    .info {
+        width: 100%;
+        line-height: 20px;
+    }
+    .items {
+        padding: 0;
+        li {
+            padding: 7px 0;
+            $border1Px(top, #e5e5e5);
+        }
+    }
+    .prodImg {
+        padding-right: 15px;
+
+        img {
+            $size = 50px;
+            width: $size; height: $size;
+        }
+    }
+    .name {
+        color: #333;
+        font-weight: bold;
+        font-size: 13px;
+    }
+    .count { float: right; }
+    .price { text-align: right; }
+    .freight { float: left; }
+    .total { color: #ff7800; }
+    .person {
+        position: relative;
+        padding-left: 28px;
+        word-wrap: break-word;
+        word-break: break-all;
+
+        &-name { margin-right: 45px; }
+        &-phone  { $display: inline-block; }
+    }
+    .btns {
+        text-align: right;
+        .u-btn {
+            width: 70px;
+            padding: 0;
+        }
+    }
+    .icon-location {
+        $fontSize = 20px;
+        position: absolute; top: 24px; left: 0;
+        margin-top: -$fontSize / 2;
+        font-size: $fontSize;
+    }
+    img { vertical-align: middle; }
+}

@@ -1,0 +1,43 @@
+@import "../mass/index";
+
+/**
+ * 1px 上下边距
+ * @param $pos 位置:top,bottom;
+ * @param $color 颜色
+ */
+$border1Px = ($pos = '', $color = #000, $offset = 0) {
+    @if $pos == '' {
+        $pos = top, bottom;
+    }
+    & {
+        position: relative;
+    }
+    @for $p of $pos {
+        @if $p == top {
+            $pseudo = before;
+        } @elseif $p == bottom {
+            $pseudo = after;
+        }
+
+        &:#{$pseudo} {
+            position: absolute; #{$p}: $offset; left: 0;
+            display: block;
+            width: 100%;
+            content: ' ';
+            border-top: 1px solid $color;
+        }
+
+        @media (-webkit-min-device-pixel-ratio:1.5), (min-device-pixel-ratio: 1.5){
+            &::#{$pseudo} {
+              $transform-origin: 0 0;
+              $transform: scaleY(.7);
+            }
+        }
+
+        @media (-webkit-min-device-pixel-ratio:2), (min-device-pixel-ratio: 2){
+            &::#{$pseudo} {
+              $transform: scaleY(.5);
+            }
+        }
+    }
+}

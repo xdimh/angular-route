@@ -1,0 +1,166 @@
+@import 'css3';
+
+// fixed-container
+// 居中 、固宽(假如传入$width)、清除浮动的
+$fixed-container = ($width){
+    $clearfix();
+    @if $width{
+        width: $width;
+    }
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/**
+ * [$layout description]
+ * @type {[type]}
+ */
+$fixed-layout = ($widths ,$gap = 0px, $class='col'){
+    $clearfix();
+    @if !is-list($widths){
+        error('expect list(values, valueslist) bug got ' + $widths);
+    } 
+    $last = len($widths) - 1; 
+    // has a fluid section already
+    $autoIndex = null;
+    $leftWidth = 0px;
+    $rightWidth = 0px;
+    
+    @for $width, $i of $widths {
+        @if $width != auto {
+            $float = $if($i != $last, left, right);
+            .#{$class}-#{$i + 1} {
+                position: relative;
+                float: $float;
+                width: $width;
+                @if $i != 0{
+                    margin-left: $gap;
+                }
+            }
+            @if $autoIndex == null{
+                $leftWidth = $leftWidth + $width;
+            }@else{
+                $rightWidth = $rightWidth + $width;
+            }
+        }@else{
+            @if $autoIndex != null{
+                error('only one block can auto width');
+            }
+            $autoIndex = $i;
+        }
+    } 
+    @if $autoIndex != null{
+        $float = $if($autoIndex != $last, left, right);
+        $margin-left = $if($leftWidth, $leftWidth + ($autoIndex - 1) * $gap, 0px);
+        $margin-right = $if($rightWidth, $rightWidth + ($last - $autoIndex) * $gap, 0px);
+        .#{$class}-#{$autoIndex + 1} {
+            width: 100%;
+            float: $float;
+            margin-left: -$margin-left;
+            margin-right: -$margin-right;
+            .#{$class}-cnt{
+                position: relative;
+                @if $margin-left > 0px{
+                    margin-left: $margin-left + $gap;
+                }
+                margin-right: $margin-right;
+            }
+        }
+    // 当全部都是固定宽度
+    }@else{
+        width: $rightWidth + $leftWidth + $last * $gap; 
+    }
+}
+
+/**
+ * 生成对应的固定栅格系统
+ * __Arguments__
+ * $col-width: 列宽;
+ * $gap: 列间距;
+ */
+$fixed-grid = ($col-width, $gap = 0px, $num = 12, $prefix = ''){
+    @if $prefix{
+        $prefix = $prefix + '-';
+    }
+    @abstract span{
+        float:left;
+        min-height: 1px;
+        margin-left: $gap;
+        display: inline;
+    }
+    @for $index of 1...$num {
+        .#{$prefix}span#{$index}{
+            width: $col-width * $index + $gap * ($index - 1);
+            @extend span;
+        }
+        .#{$prefix}offset#{$index}{
+            margin-left: $gap * ($index + 1) + $col-width * $index;
+        }
+    }
+    .#{$prefix}offset0{
+        margin-left: 0px;
+    }
+    .#{$prefix}row{
+        $clearfix();
+        margin-left: -$gap;
+    }
+    .#{$prefix}container{
+        width: $col-width * $num + $gap * ($num - 1);
+    }   
+}
+
+/**
+ * fluid layout relative
+ */
+
+$fluid-row = ($gap = 0px){
+    margin-left: -($gap / 2); 
+    margin-right: -($gap / 2);
+    $clearfix();
+}
+
+$fluid-col = ($gap = 0px){
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-left: $gap / 2;
+    padding-right: $gap / 2;
+}
+
+$fluid-layout = ($widths, $gap = 0px, $class='col'){
+    $fluid-row: $gap;
+    @abstract column{
+        $fluid-col: $gap;
+    }
+    @for $width, $i of $widths {
+        .#{$class}-#{$i + 1} {
+            @extend column;
+            width: $width;
+        }
+    }
+}
+
+
+$fluid-grid = ($gap = 0px, $num = 12, $prefix = ''){
+    *, *:after, *:before{
+        $box-sizing: border-box;
+    }
+    @if $prefix{
+        $prefix = $prefix + '-';
+    }
+    @abstract column {
+        $fluid-col: $gap;
+    }
+    @for $index of 1...$num {
+        .#{$prefix}col-#{$index} {
+            @extend column;
+            width: 100% * $index / $num ;
+        }
+        .#{$prefix}offset-#{$index} {
+            margin-left: 100% * $index / $num;
+        }
+    }
+    .#{$prefix}container{
+        $clearfix();
+    }
+}

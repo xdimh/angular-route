@@ -1,0 +1,70 @@
+@import "../mass/index";
+@import "_function";
+
+.goodsList,.goodSingle {
+    .prodBanner {
+        position: relative;
+        display: block;
+        width: 100%;
+        background-color: #ebebeb;
+        overflow: hidden;
+    }
+    .info {
+        padding: 13px 17px;
+        /* 标题 */
+        h2 { font-size: 14px; font-weight: normal; $txt-ellipsis: hidden; }
+        /* 价格 */
+        p { margin-top: 8px; color: #ff7800; font-size: 15px; }
+        .orig { margin-left: 16px; color: #909090; font-size: 12px; text-decoration: line-through; }
+    }
+    .button {
+        position: absolute; bottom: 15px; right: 11px;
+        width: 60px; height: 20px;
+        line-height: 20px;
+        border: 1px solid #333;
+        text-align: center;
+    }
+    .new {
+        margin-left: 9px;
+        color: #ff7800;
+        font-size: 12px;
+        font-style: italic;
+    }
+    .detail {
+        background-color: #ebebeb;
+        img {
+            display: block; width: 100%;
+        }
+    }
+}
+
+.goodsList {
+    li {
+        position: relative;
+        margin: 10px 5px 0 5px;
+        background-color: #fff;
+    }
+    .prodBanner {
+        padding-top: 50%;
+        $border1Px(bottom, #ebebeb, -1px);
+
+        img { position: absolute; top: 0;  width: 100%; height: 100%; }
+    }
+}
+
+.goodSingle {
+    background-color: #fff;
+    .info {
+        padding: 30px 17px;
+        h2, p { font-size: 16px; }
+        .stock {
+            margin-top: 25px;
+            font-size: 14px;
+            color: #909090;
+        }
+    }
+    .prodBanner {
+        padding-top: 70%;
+        img { position: absolute; top: 0; width: 100%; height: 100%; }
+    }
+}

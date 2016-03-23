@@ -1,0 +1,27 @@
+@import "../mass/index";
+
+$btnColor = ($color,$hoverColor,$activeColor,$disabledColor){
+    $hoverColor ?= $color;
+    $activeColor ?= $hoverColor;
+    $disabledColor ?=  $hoverColor;
+    background-color: $color;
+    &:hover,
+    &:focus {
+        background-color:$hoverColor;
+    }
+    &:active,
+    &.active {
+        background-color : $activeColor;
+    }
+    &[disabled],
+    &.disabled {
+        background-color: $disabledColor;
+    }
+}
+
+$btnSize = ($plr,$ptb,$fs,$hl,$br){
+    padding: $plr $ptb;
+    font-size: $fs;
+    line-height: $hl;
+    $border-radius: $br;
+}

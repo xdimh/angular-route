@@ -1,0 +1,69 @@
+@import "../mass/index";
+@import "_layout";
+@import "_function.mcss";
+@import "_common.mcss";
+@import "_orders.mcss";
+@import "toast.mcss";
+@import "mask.mcss";
+
+$reset-nec();
+
+#main {
+    background-color:#fff;
+}
+
+.orderdetail .freight {
+    margin-left:55px;
+}
+
+.m-resultinfo {
+    text-align:center;
+    .status {
+        padding:15px 0;
+        font-size:13px;
+        font-weight:bold;
+        .icon-right {
+            position:relative;
+            top:3px;
+            margin-right:3px;
+            font-size:18px;
+        }
+        color:#333;
+    }
+    .tip {
+        padding-bottom:8px;
+        color:#909090;
+    }
+    .firstline {
+        margin-top:80px;
+        font-size:16px;
+        color:#333;
+    }
+    .secondline {
+        margin-top:27px;
+        font-size:15px;
+        color:#909090;
+    }
+    .thirdline {
+        margin-top:20px;
+        font-size:13px;
+        color:#909090;
+    }
+}
+
+#bottom {
+    $border1Px(top,#e5e5e5);
+    position: absolute !important;
+    .bold {
+        font-weight:bold;
+    }
+}
+
+.m-mask {
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-color:rgba(0,0,0,.15);
+}

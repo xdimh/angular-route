@@ -1,0 +1,98 @@
+@import "../mass/index";
+@import "_layout";
+@import "_function";
+@import "_common";
+@import "_goods";
+
+$reset-nec();
+
+.topBanner {
+    width: 100%;
+    padding-top: 5px;
+    background-color: #333;
+    text-align: center;
+    img {
+        display: block;
+        position: relative; top: 4px;
+        width: 100%;
+    }
+}
+
+
+.tabs {
+    display: table;
+    width: 100%;
+    text-align: center;
+    color: #333;
+    background-color: #fff;
+    font-size: 16px;
+    
+    .tab {
+        display: table-cell;
+        vertical-align: middle;
+        a {
+            display: block;
+            height: 50px; line-height: 50px;
+            vertical-align: middle;
+        }
+
+        &.z-cur {
+            a {
+                color: #fff;
+            }
+            background-color: #333;
+        }
+        span { vertical-align: middle; }
+    }
+
+    &-view {
+        width: 100%; height: 100%;
+    }
+    .icon { font-size: 17px; margin-right: 12px; }
+}
+
+.menuList,.qaList {
+    li {
+        background-color: #fff;
+        font-size: 14px;
+
+        a {
+            display: block;
+            padding: 0 25px;
+            height: 50px; line-height: 50px;
+        }
+    }
+    span { vertical-align: middle; }
+    li+li { margin-top: 1px; }
+    .icon { font-size: 20px; margin-right: 15px; }
+}
+.menuList {
+    li {
+        a {
+            display: block;
+            padding: 0 25px;
+            height: 50px; line-height: 50px;
+        }
+    }
+}
+
+.qaList {
+    .title {
+        padding: 0 25px;
+        height: 50px; line-height: 50px;
+        $txt-ellipsis: hidden;
+    }
+    .content {
+        display: none;
+        padding: 20px 25px;
+        line-height: 18px;
+        font-size: 13px;
+        color: #827e7e;
+        background-color: #ebebeb;
+        overflow: hidden;
+
+        &.z-expand {
+            display: block;
+        }
+    }
+}

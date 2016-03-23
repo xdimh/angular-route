@@ -1,0 +1,36 @@
+@import "../mass/index";
+@import "_layout";
+@import "_function";
+@import "_common";
+@import "_goods";
+@import "_units";
+
+$reset-nec();
+
+#bottom {
+    .col { padding-left: 18px; }
+    .col+.col { text-align: right; padding-right: 16px; }
+
+    .u-ipt,.u-btn { vertical-align: middle; }
+    .u-btn-lg { width: 113px; padding: 0; text-align: center; }
+}
+#count, #button_add { margin-left: 4px; }
+
+.fltCart {
+    $size = 50px;
+    $iconSize = 30px;
+
+    position: absolute; bottom: 93px; right: 10px;
+    width: 50px; height: 50px;
+    text-align: center;
+    $border-radius: $size;
+    color: #ff7900;
+    background-color: #fff;
+    $box-shadow: 0 0 20px -10px #000;
+
+    .icon {
+        display: block;
+        margin-top: ($size - $iconSize) / 2;
+        font-size: $iconSize;
+    }
+}

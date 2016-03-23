@@ -1,0 +1,66 @@
+
+.yxui-toast {
+    position: fixed;
+    z-index: 100;
+    padding:0 5px;
+    min-width: 76px;
+    height: 87px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: rgba(0,0,0,.8);
+    border-radius: 5px;
+
+    div.yxui-loading {
+        position: absolute;
+        top: 26px;
+        left: 50%; // problem
+        //-webkit-transform: translateX(-50%);
+        //transform: translateX(-50%);
+        margin-left: -5px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #fff;
+        -webkit-backface-visibility: visible;
+        backface-visibility: visible;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+}
+
+.yxui-toast-content {
+    margin-top: 53px;
+    font-size: 15px;
+    text-align: center;
+    color: #fffefe;
+}
+
+.yxui-toast-tip {
+    position: fixed;
+    z-index: 13;
+    bottom: 20px;
+    left: 50%;
+    min-width: 50%;
+    text-align: center;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #444;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,.4);
+    box-shadow: 0 0 5px rgba(0,0,0,.4);
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: opacity .6s ease 0s;
+    transition: opacity .6s ease 0s;
+
+    &.fadeIn {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+

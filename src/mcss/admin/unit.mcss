@@ -1,0 +1,47 @@
+@import "../mass/index";
+@import "_function";
+@import "_mixin";
+
+
+/**
+    Button
+*/
+.u-btn {
+  display: inline-block;
+  padding: 6px 24px;
+  margin-bottom: 0;
+  border: 1px solid transparent;
+  color:#fff;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  background-image: none;
+  $border-radius: 4px;
+  cursor: pointer;
+  &-lg {
+    $btnSize(10px,16px,18px,1.33,6px);
+  }
+  &-sm {
+    $btnSize(5px,10px,12px,1.5,3px);
+  }
+  &-btn-xs {
+    $btnSize(1px,5px,12px,1.5,3px);
+  }
+  &-green {
+    $btnColor(#00b48c,#008164);
+  }
+  &-red {
+    $btnColor(#d9534f,#c9302c);
+  }
+  &-lightblue {
+    $btnColor(#5bc0de,#31b0d5);
+  }
+  &-grey {
+   cursor:text;
+   color:#fff;
+   $btnColor(#e6e6e6);
+  }
+}

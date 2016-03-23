@@ -1,0 +1,96 @@
+@import "../mass/index";
+@import "_layout";
+@import "_function.mcss";
+@import "_common.mcss";
+@import "_orders.mcss";
+@import "toast.mcss";
+@import "mask.mcss";
+
+$reset-nec();
+.main {
+    padding:0 5.3%;
+    background-color:#fff !important;
+}
+
+
+.m-resultinfo {
+    text-align:center;
+    .status {
+        padding:15px 0;
+        font-size:13px;
+        font-weight:bold;
+        .icon-right {
+            position:relative;
+            top:3px;
+            margin-right:3px;
+            font-size:18px;
+        }
+        color:#333;
+    }
+    .tip {
+        padding-bottom:8px;
+        color:#909090;
+        p {
+            line-height:1.5;
+        }
+    }
+    .firstline {
+        margin-top:80px;
+        font-size:16px;
+        color:#333;
+    }
+    .secondline {
+        margin-top:27px;
+        font-size:15px;
+        color:#909090;
+    }
+    .thirdline {
+        margin-top:20px;
+        font-size:13px;
+        color:#909090;
+    }
+}
+
+.m-orderwrapper {
+    overflow:hidden;
+    margin-top:26px;
+    .order {
+         color:#909090;
+        .info {
+            padding:13px 0;
+
+            &:first-child {
+                $border1Px(top,#e5e5e5);
+            }
+            $border1Px(bottom,#e5e5e5);
+
+            .code {
+                margin-bottom:14px;
+            }
+        }
+        .totalfee {
+            float:right;
+            margin-top:13px;
+        }
+    }
+}
+
+#bottom {
+    $border1Px(top,#e5e5e5);
+    position: absolute !important;
+    .bold {
+        font-weight:bold;
+    }
+}
+
+.m-notice {
+    margin:20% auto 10px;
+    text-align:center;
+    color:#909090;
+    font-size:12px;
+    line-height:1.8;
+    a {
+        color:#ff7800;
+        text-decoration:underline;
+    }
+}

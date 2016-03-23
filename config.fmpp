@@ -1,0 +1,14 @@
+sourceRoot: template
+outputRoot: statichtml
+logFile: log.fmpp
+dataRoot: mock/
+modes: [
+   ignore(common/*,!cart.ftl,wap/index.ftl)
+   execute(*.ftl)
+]
+freemarkerLinks: {
+    inc: 'template/common/'
+}
+replaceExtensions:[ftl,html]
+data: {tdd(test.tdd)}
+datetimeFormat : "yyyy-MM-dd HH:mm"

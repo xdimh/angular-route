@@ -1,0 +1,146 @@
+@import 'var';
+@import 'functions.mcss';
+
+$size = ($width, $height){
+    $height ?= $width;
+    height: $height; 
+    width: $width; 
+}
+// __exmaple__:
+// div{
+//     $size: 50px
+// }
+
+
+// 不带参数, 可视为一个block模版  
+$clearfix = {
+    *zoom: 1;
+    &:before, &:after {
+        display: table;
+        content: "";
+        line-height: 0; 
+    }
+    &:after {
+        clear: both; 
+    }
+}
+// __example__:
+// div{
+//     $clearfix();
+//     .left{
+//         float: left;
+//     }
+//     .right{
+//         float: right;
+//     }
+// }
+
+
+// inline-block
+$inline-block = {
+    display: inline-block;
+    vertical-align: baseline;
+    zoom: 1;
+    *display: inline;
+    *vertical-align: auto;
+}
+
+
+// $opa is between 0 - 1 
+$opacity = ($opa){
+    filter:  alpha(opacity = round($opa * 100));
+    opacity: $opa;
+}
+
+// short hand $border
+$border = ($color){
+   border: $if(typeof($color) == 'color', 1px solid $color, $color); 
+}
+
+
+// 宽度超过 显示省略号, $nowrap 切换是否换行.
+$txt-ellipsis = ($nowrap = true){
+    @if $nowrap {
+        white-space:nowrap }
+    text-overflow:ellipsis; 
+    overflow:hidden;
+}
+
+
+
+// position
+$position = ($type){
+    position: $type;
+    @if $type == fixed {
+        _position: absolute;
+        z-index: 9999;
+    }
+}
+
+// line-height and height;
+$lh = ($height){
+    height: $height;
+    line-height: $height; 
+}
+
+// the min-height hack for ie6
+$min-height = ($height){
+    min-height: $height;
+    height: auto !important;
+    _height: $height;
+}
+
+
+// cross-browser display
+$display = ($name){
+    @if $name == box {
+        display: -webkit-box;
+        display: -moz-box;
+        display: box;    
+    }@elseif $name == inline-block{
+        $inline-block();
+    }@else{
+        display: name;
+    }
+}
+
+// __exmaple__:
+// span{
+//     $display: inline-block;
+//     $display: box;
+// }
+
+$font-face = ($name, $path, $block, $support-svg = false){
+    $links = 
+        url('#{$path}.eot?#iefix') format('embedded-opentype'),
+        url('#{$path}.woff') format('woff'),
+        url('#{$path}.ttf') format('truetype');
+    @if $support-svg {
+        push($links, url('#{$path}.svg##{$name}') format('svg'))
+    }
+    @font-face {
+        font-family: $name;
+        src: url('#{$path}.eot');
+        src: $links;
+        $block();
+    }
+}
+
+// set the color with hover:active state;
+// __exmaple__:
+// a{
+//    $state-color: red;
+//    // set the background-color but not the default color property
+//    $state-color: blue, $property = background-color;
+// }
+
+$state-color = ($color, $hover = 8%, $active = -5%, $property= color){
+  #{$property}: $color;
+  &:hover{
+    #{$property}: l-adjust($color, $hover);
+  }
+  &:active{
+    #{$property}: l-adjust($color, $active);
+  }
+}
+
