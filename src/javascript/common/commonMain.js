@@ -6,7 +6,7 @@
  */
 
 requirejs.config({
-    baseUrl: '/PHPLearn/src/javascript/',
+    baseUrl: '/PHPLearn/src/javascript/www-built',
     paths: {
         'jquery': '3rd/jquery/dist/jquery.min',
         'angular': '3rd/angular/angular.min',

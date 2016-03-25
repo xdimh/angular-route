@@ -3,19 +3,7 @@
     baseUrl: '.',
     // Location of the runtime config be read for the build.
     mainConfigFile: './common/commonMain.js',
-    //The directory path to save the output.
-    //dir: '../dist',
-    // If you do not want uglifyjs optimization.
-    optimize: 'none',
-    // Inlines any text! dependencies, to avoid separate requests.
-    inlineText: true,
-    // Modules to stub out in the optimized file.
-    stubModules: ['text', 'hbars'],
-    // Files combined into a build layer will be removed from the output folder.
-    removeCombined: true,
-    // This option will turn off the auto-preservation.
-    preserveLicenseComments: false,
-    //List the modules that will be optimized.
+
     //modules: [
     //    {
     //        name: "page" // main config file
@@ -27,14 +15,14 @@
         //First set up the common build layer.
         {
             //module names are relative to baseUrl
-            name: '../common',
+            name: './common/commonMain',
             //List common dependencies here. Only need to list
             //top level dependencies, "include" will find
             //nested dependencies.
             include: ['jquery',
                 'angular',
-                'app/controller/Base',
-                'app/model/Base'
+                'domReady',
+                'angular-route'
             ]
         },
 
@@ -51,17 +39,15 @@
         //That loading sequence is controlled in page1.html.
         {
             //module names are relative to baseUrl/paths config
-            name: 'app/main1',
-            exclude: ['../common']
+            name: 'home/bootstrap',
+            exclude: ['./common/commonMain']
         },
 
         {
             //module names are relative to baseUrl
-            name: 'app/main2',
-            exclude: ['../common']
+            name: 'introduction/bootstrap',
+            exclude: ['./common/commonMain']
         }
 
     ]
-    name : "home/main",
-    out:"build/main-build.js"
 })
