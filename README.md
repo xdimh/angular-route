@@ -87,8 +87,11 @@ statichtml // ftl 模板本地编译后html所在的目录，用于开发自测
 template // ftl模板所在目录，子目录可以按业务进行划分
 ```
 * (2) 打包文件配置
+
   [参考Requirejs optimizer](http://requirejs.org/docs/optimization.html)
+  
   [参考example-multipage-shim](https://github.com/requirejs/example-multipage-shim)
+  
   [参考a-require-dot-js-multipage-shimmed-site-how-to](http://robdodson.me/a-require-dot-js-multipage-shimmed-site-how-to/)
   demo 中的配置文件配置具体如下：
 ```javascript
@@ -161,12 +164,7 @@ template // ftl模板所在目录，子目录可以按业务进行划分
 可以看到请求数较打包前明显减少，代码并进行了相应的压缩处理，下载完成所有的时间更短。
 
 (3) module.js app.js bootstrap.js commonMain.js 的相应内容
+
 demo地址：https://github.com/xdimh/angular-route
 
 (4) 然后对输出结果可以用nej打包进行最后的打包处理
-
-  [1]: ./images/requirejs%E6%89%93%E5%8C%85.png "requirejs打包.png"
-  [2]: ./images/1458886603840.jpg "1458886603840.jpg"
-  [3]: ./images/1458889382359.jpg "1458889382359.jpg"
-  [4]: ./images/1458889436139.jpg "1458889436139.jpg"
-  [5]: ./images/1458889613680.jpg "1458889613680.jpg"
