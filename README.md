@@ -89,9 +89,7 @@ template // ftl模板所在目录，子目录可以按业务进行划分
 * (2) 打包文件配置
 
   [参考Requirejs optimizer](http://requirejs.org/docs/optimization.html)
-  
   [参考example-multipage-shim](https://github.com/requirejs/example-multipage-shim)
-  
   [参考a-require-dot-js-multipage-shimmed-site-how-to](http://robdodson.me/a-require-dot-js-multipage-shimmed-site-how-to/)
   demo 中的配置文件配置具体如下：
 ```javascript
@@ -149,16 +147,16 @@ template // ftl模板所在目录，子目录可以按业务进行划分
     ]
 })
 ```
-打包前后请求数对比 ：
-* 打包前
+_打包前后请求数对比 ：_
+_打包前_
 
 ![打包前](http://7oxjbb.com1.z0.glb.clouddn.com/before.jpg)
 
 
-* 打包输出结果
+_打包输出结果_
 
 ![打包输出结果](http://7oxjbb.com1.z0.glb.clouddn.com/process.jpg)
-* 打包后
+_打包后_
 
 ![打包后](http://7oxjbb.com1.z0.glb.clouddn.com/after.jpg)
 可以看到请求数较打包前明显减少，代码并进行了相应的压缩处理，下载完成所有的时间更短。
