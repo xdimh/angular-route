@@ -3,13 +3,17 @@
 
 ### 1. Nej + regular
 * 使用的框架
+
   Nej (包括模块化Nej.define,模块调度，nes和常用控件)
+  
   [Regularjs](https://github.com/regularjs/regular) 波神是这么介绍的：
   > Regularjs is a living template engine that helps us to create data-driven components.
   可以减少很多DOM操作，写起来还是很爽的
 
 * 可使用的UI库
+
   Nej的控件库，包括弹窗，分页等
+  
   [Regularjs-ui](http://regular-ui.github.io/index.html) 组件库
   >  一款基于RegularJS的前端组件库,轻量、简洁、高效
 
@@ -46,6 +50,7 @@
 ### 3.第二种架构方案demo配置如下
 
 * (1) 目录结构
+
 ![目录结构](http://7oxjbb.com1.z0.glb.clouddn.com/%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.jpg)
 
 
