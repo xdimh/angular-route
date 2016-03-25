@@ -1,4 +1,4 @@
-# 前端重构架构选择对比 
+# 前端重构架构选择思考
 ---
 
 ### 1. Nej + regular
@@ -159,6 +159,7 @@ __打包前__
 __打包输出结果__
 
 ![打包输出结果](http://7oxjbb.com1.z0.glb.clouddn.com/process.jpg)
+
 __打包后__
 
 ![打包后](http://7oxjbb.com1.z0.glb.clouddn.com/after.jpg)
