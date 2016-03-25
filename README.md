@@ -17,6 +17,7 @@
   能够对mcss，ftl，html，js 进行相应的压缩处理，和提取公共文件单独引用，减少http请求，模块化依赖分析只能处理Nej.define定义的模块。但配置相对简单
 * 目录结构和代码规范
   可以参考公众平台的目录结构并做相应的调整
+
 #### __总结__ ： 公司内部技术栈，框架作者在公司（飞哥，波神），遇到难以解决的框架问题以及框架带来的技术坑可以方便咨询。前端组人员大部分都会这两种技术框架，前期学习成本不大。推荐指数：四颗星
 
 ---
@@ -32,11 +33,11 @@
 
 * 打包工具
   r.js + nej 打包 nej打包页面明确说了Requirejs的打包工具
-  > ![enter description here][1]
+  > ![打包工具](http://7oxjbb.com1.z0.glb.clouddn.com/requirejs%E6%89%93%E5%8C%85.png)
 
 
 
-        所以我们需要先对js代码用r.js进行打包，然后其他的再用nej进行打包。
+所以我们需要先对js代码用r.js进行打包，然后其他的再用nej进行打包。
 * 目录结构和代码规范
   可以在原来的代码目录结构上进行调整[参考AngularJs最佳实践](https://github.com/mgechev/angularjs-style-guide/blob/master/README-zh-cn.md)
 
@@ -45,7 +46,7 @@
 ### 3.第二种架构方案demo配置如下
 
 * (1) 目录结构
-![目录结构](http://7oxjbb.com1.z0.glb.clouddn.com/requirejs%E6%89%93%E5%8C%85.png)
+![目录结构](http://7oxjbb.com1.z0.glb.clouddn.com/%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.jpg)
 
 
 
@@ -135,13 +136,16 @@ template // ftl模板所在目录，子目录可以按业务进行划分
 ```
 打包前后请求数对比 ：
 * 打包前
+
 ![打包前](http://7oxjbb.com1.z0.glb.clouddn.com/before.jpg)
 
 
 * 打包输出结果
-  ![打包输出结果](http://7oxjbb.com1.z0.glb.clouddn.com/process.jpg)
+
+![打包输出结果](http://7oxjbb.com1.z0.glb.clouddn.com/process.jpg)
 * 打包后
-  ![打包后](http://7oxjbb.com1.z0.glb.clouddn.com/after.jpg)
+
+![打包后](http://7oxjbb.com1.z0.glb.clouddn.com/after.jpg)
 可以看到请求数较打包前明显减少，代码并进行了相应的压缩处理，下载完成所有的时间更短。
 
 (3) module.js app.js bootstrap.js commonMain.js 的相应内容
