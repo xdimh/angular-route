@@ -1,4 +1,4 @@
-# 前端重构架构选择思考
+# 前端重构架构选择的思考
 ---
 
 ### 1. Nej + regular
@@ -93,7 +93,8 @@ template // ftl模板所在目录，子目录可以按业务进行划分
   [参考example-multipage-shim](https://github.com/requirejs/example-multipage-shim)
   
   [参考a-require-dot-js-multipage-shimmed-site-how-to](http://robdodson.me/a-require-dot-js-multipage-shimmed-site-how-to/)
-  demo 中的配置文件配置具体如下：
+  
+__demo 中的配置文件配置具体如下：__
 ```javascript
 // See https://github.com/jrburke/r.js/blob/master/build/example.build.js
 ({
