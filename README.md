@@ -1,9 +1,5 @@
 # 前端重构架构选择对比 
 ---
-title: 前端重构架构选择对比
-tags: angular,nej,regular,r.js
-grammar_cjkRuby: true
----
 
 ### 1. Nej + regular
 * 使用的框架
@@ -49,7 +45,7 @@ grammar_cjkRuby: true
 ### 3.第二种架构方案demo配置如下
 
 * (1) 目录结构
-![enter description here][2]
+![目录结构](http://7oxjbb.com1.z0.glb.clouddn.com/requirejs%E6%89%93%E5%8C%85.png)
 
 
 
@@ -83,7 +79,7 @@ template // ftl模板所在目录，子目录可以按业务进行划分
   [参考a-require-dot-js-multipage-shimmed-site-how-to](http://robdodson.me/a-require-dot-js-multipage-shimmed-site-how-to/)
   demo 中的配置文件配置具体如下：
 ```javascript
-    // See https://github.com/jrburke/r.js/blob/master/build/example.build.js
+// See https://github.com/jrburke/r.js/blob/master/build/example.build.js
 ({
     baseUrl: '.',
     // Location of the runtime config be read for the build.
@@ -139,13 +135,13 @@ template // ftl模板所在目录，子目录可以按业务进行划分
 ```
 打包前后请求数对比 ：
 * 打包前
-![enter description here][3]
+![打包前](http://7oxjbb.com1.z0.glb.clouddn.com/before.jpg)
 
 
 * 打包输出结果
-  ![enter description here][4]
+  ![打包输出结果](http://7oxjbb.com1.z0.glb.clouddn.com/process.jpg)
 * 打包后
-  ![enter description here][5]
+  ![打包后](http://7oxjbb.com1.z0.glb.clouddn.com/after.jpg)
 可以看到请求数较打包前明显减少，代码并进行了相应的压缩处理，下载完成所有的时间更短。
 
 (3) module.js app.js bootstrap.js commonMain.js 的相应内容
